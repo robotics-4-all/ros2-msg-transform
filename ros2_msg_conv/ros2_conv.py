@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from collections import OrderedDict
 
 from rosidl_runtime_py.convert import message_to_ordereddict

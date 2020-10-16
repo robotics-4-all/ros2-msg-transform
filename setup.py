@@ -4,13 +4,14 @@
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
+with open('README.md') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
+# with open('HISTORY.rst') as history_file:
+#     history = history_file.read()
 
-requirements = ['rosidl_runtime_py', 'rosidl_parser']
+# requirements = ['rosidl_runtime_py', 'rosidl_parser']
+requirements = [ ]
 
 setup_requirements = [ ]
 
@@ -35,7 +36,7 @@ setup(
     entry_points={},
     install_requires=requirements,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     include_package_data=True,
     keywords='ros2',
     name='ros2_msg_conv',
