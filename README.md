@@ -48,7 +48,8 @@ req = SetBool.Request()
 _dict = ros2_msg_to_dict(req)
 ```
 
-### Convert an OrderedDict to a ROS2 structure
+
+### Convert an OrderedDict to a ROS2 communication structure
 
 Can be used to convert into any type of ROS2 communication structure
 (Topic Message, Service, Action).
@@ -63,9 +64,6 @@ def dict_to_ros2_msg(py_dict: OrderedDict, msg_cls: Any) -> Any:
         py_dict (OrderedDict): Dict/OrderedDict to convert to ROS2 message.
         msg_cls (Any): ROS2 Message class.
     """
-    m = msg_cls()
-    set_message_fields(m, py_dict)
-    return m
 ```
 
 Below are two examples, one for converting a ROS2 msg and one for converting
@@ -91,4 +89,16 @@ from std_srvs.srv import SetBool
 
 _req = dict_to_ros2_msg(_dict, SetBool.Request)
 _resp = dict_to_ros2_msg(_dict, SetBool.Response)
+```
+
+You can also construct from and to ROS2 message structures without the need
+to import them. This is achieved via passing a string that includes the
+namespace of the message.
+
+```
+_msg = dict_to_ros2_msg_from_ns(_dict, 'sensor_msgs/Range')
+```
+
+```
+_msg = dict_to_ros2_srv_from_ns(_dict, 'std_srvs/SetBool.Request')
 ```
