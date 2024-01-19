@@ -7,43 +7,34 @@ from setuptools import setup, find_packages
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-# with open('HISTORY.rst') as history_file:
-#     history = history_file.read()
+requirements = []
 
-# requirements = ['rosidl_runtime_py', 'rosidl_parser']
-requirements = [ ]
-
-setup_requirements = [ ]
-
-test_requirements = [ ]
+with open("requirements.txt") as f:
+    requirements = f.read().splitlines()
 
 setup(
     author="Konstantinos Panayiotou",
-    author_email='klpanagi@gmail.com',
-    python_requires='>=3.5',
+    author_email='klpanagi@ece.auth.gr',
+    python_requires='>=3.7',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
-    description="Methods to manipulate ROS2 messages",
+    description="Library to manipulate ROS2 messages",
     entry_points={},
     install_requires=requirements,
     license="MIT license",
     long_description=readme,
     include_package_data=True,
-    keywords='ros2',
+    keywords=['ros2', 'iot', 'cps'],
     name='ros2_msg_conv',
     packages=find_packages(include=['ros2_msg_conv', 'ros2_msg_conv.*']),
-    setup_requires=setup_requirements,
-    test_suite='tests',
-    tests_require=test_requirements,
     url='https://github.com/robotics4all/ros2_msg_conv',
     version='0.2.2',
     zip_safe=False,
