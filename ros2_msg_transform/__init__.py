@@ -2,7 +2,7 @@
 
 __author__ = """Konstantinos Panayiotou"""
 __email__ = 'klpanagi@gmail.com'
-__version__ = '0.1.0'
+__version__ = '0.2.2'
 
 from .ros2_conv import (
     ros2_msg_to_dict,

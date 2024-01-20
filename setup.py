@@ -1,16 +1,24 @@
 #!/usr/bin/env python
 
 """The setup script."""
-
+import os
 from setuptools import setup, find_packages
 
-with open('README.md') as readme_file:
-    readme = readme_file.read()
+THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 
-requirements = []
+VERSIONFILE = os.path.join(THIS_DIR, "ros2_msg_transform", "__init__.py")
+VERSION = None
+for line in open(VERSIONFILE, "r").readlines():
+    if line.startswith("__version__"):
+        VERSION = line.split('"')[1]
+
+with open('README.md') as readme_file:
+    README = readme_file.read()
+
+REQUIREMENTS = []
 
 with open("requirements.txt") as f:
-    requirements = f.read().splitlines()
+    REQUIREMENTS = f.read().splitlines()
 
 setup(
     author="Konstantinos Panayiotou",
@@ -26,17 +34,16 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
     ],
-    description="Library to manipulate ROS2 messages",
-    entry_points={},
-    install_requires=requirements,
+    description="Library to transform ROS2 messages to Python structures",
+    install_requires=REQUIREMENTS,
     license="MIT license",
-    long_description=readme,
+    long_description=README,
     include_package_data=True,
     keywords=['ros2', 'iot', 'cps'],
     name='ros2_msg_transform',
     packages=find_packages(include=['ros2_msg_transform', 'ros2_msg_transform.*']),
     url='https://github.com/robotics4all/ros2_msg_transform',
-    version='0.2.2',
+    version=VERSION,
     zip_safe=False,
 )
 
