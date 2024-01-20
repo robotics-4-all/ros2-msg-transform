@@ -33,9 +33,9 @@ setup(
     long_description=readme,
     include_package_data=True,
     keywords=['ros2', 'iot', 'cps'],
-    name='ros2_msg_conv',
-    packages=find_packages(include=['ros2_msg_conv', 'ros2_msg_conv.*']),
-    url='https://github.com/robotics4all/ros2_msg_conv',
+    name='ros2_msg_transform',
+    packages=find_packages(include=['ros2_msg_transform', 'ros2_msg_transform.*']),
+    url='https://github.com/robotics4all/ros2_msg_transform',
     version='0.2.2',
     zip_safe=False,
 )
