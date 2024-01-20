@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "ros2-msg-transform"
+version = "0.2.2"
+description = ""
+authors = ["Konstantinos Panayiotou <klpanagi@ece.auth.gr>"]
+readme = "README.md"
+packages = [{include = "ros2_msg_transform"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
