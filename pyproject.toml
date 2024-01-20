@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "ros2-msg-transform"
 version = "0.2.2"
-description = ""
+description = "Transform ROS2 messages to Python structures"
 authors = ["Konstantinos Panayiotou <klpanagi@ece.auth.gr>"]
+license = "MIT"
 readme = "README.md"
-packages = [{include = "ros2_msg_transform"}]
 
 [tool.poetry.dependencies]
 python = "^3.7"
