@@ -1,13 +1,13 @@
-# ros2_msg_conversions
-Implements ros2 message conversion operations.
+# ros2-msg-transformations
+Transform ROS2 messages to Python structures.
 
 
 ## Methods
 
 ### Convert ROS2 structures to OrderedDict
 
-Can be used to convert any type of ROS2 communication structure
-(Topic Message, Service, Action).
+Can be used to transform any type of ROS2 communication message
+(Topic Message, Service Message, Action Message) to an `OrderedDict`
 
 ```python
 def ros2_msg_to_dict(msg: Any) -> OrderedDict:
@@ -47,8 +47,8 @@ _dict = ros2_msg_to_dict(req)
 
 ### Convert an OrderedDict to a ROS2 communication structure
 
-Can be used to convert into any type of ROS2 communication structure
-(Topic Message, Service, Action).
+Can be used to transform into any type of ROS2 communication message
+(Topic Message, Service Message, Action Message).
 
 ```python
 def dict_to_ros2_msg(py_dict: OrderedDict, msg_cls: Any) -> Any:
